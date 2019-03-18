@@ -11,6 +11,10 @@ export class RecipeService {
           new Ingrediant('Meat', 1),
           new Ingrediant('Milk', 2)
       ]),
+      new Recipe('Fine Recipe', 'This is Fine a test', '', [
+          new Ingrediant('Brocilli', 6),
+          new Ingrediant('Tea', 4)
+      ])
     ];
 
     constructor(private slService: ShoppingListService) {}
