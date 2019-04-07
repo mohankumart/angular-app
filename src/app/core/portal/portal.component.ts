@@ -17,4 +17,9 @@ export class PortalComponent implements OnInit {
       this.homeService.moveOverlayOnTop(this.uuid);
       console.log('hello--->' + this.uuid);
   }
+
+  close() {
+    this.homeService.closeOverlay(this.uuid);
+  }
+
 }

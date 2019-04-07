@@ -8,6 +8,12 @@ export class HomeService {
   overlayRefs: { uuid: string, overlayRef: OverlayRef }[] = [];
   constructor(private overlayContainer: OverlayContainer) { }
 
+  deleteOverlay(uuid: string) {
+    this.overlayRefs = this.overlayRefs.filter((obj) => {
+       return obj.uuid !== uuid;
+    });
+  }
+
   getOverlayRef(uuid: string) {
     return this.overlayRefs.filter((obj) => {
         return obj.uuid === uuid;
@@ -36,4 +42,10 @@ export class HomeService {
     });
     return zIndex;
   }
+
+  closeOverlay(uuid: string) {
+    this.getOverlayRef(uuid).detach();
+    this.deleteOverlay(uuid);
+  }
+
 }
